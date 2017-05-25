@@ -22,7 +22,8 @@
   padding-top: ($padding-base-vertical + 1);
   padding-bottom: ($padding-base-vertical + 1);
   color: #fff;
-  &:hover {
+  &:hover,
+  &:focus {
     background-image: linear-gradient(to right, darken(#5f72bd, 5%) 0%, darken(#9b23ea, 5%) 100%);
   }
   &.btn-sm {
@@ -43,7 +44,8 @@
 
 .btn-bordered {
   @include button-variant(#fefefe, transparent, #fefefe);
-  &:hover {
+  &:hover,
+  &:focus {
     background-color: #fff;
     color: $text-color;
   }

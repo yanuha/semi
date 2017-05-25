@@ -108,9 +108,9 @@
 }
 
 .testimonial__cnt {
-  padding: 30px 30px;
+  padding: 30px 10px;
   @include breakpoint($screen-sm) {
-    padding: 150px 60px;
+    padding: 150px 60px 50px 40px;
   }
 }
 
@@ -119,11 +119,11 @@
   font-family: Merriweather, sans-serif;
   font-size: 20px;
   font-style: italic;
-  margin-bottom: 30px;
   line-height: 1.6;
+  margin-bottom: 15px;
   @include breakpoint($screen-sm) {
-    font-size: 16px;
-    margin-bottom: 15px;
+    font-size: 18px;
+    margin-bottom: 30px;
   }
 }
 
@@ -139,8 +139,14 @@
 }
 
 .testimonial__img-w {
+  @include breakpoint($screen-sm) {
+    margin-top: -50px;
+  }
   img {
     margin: 0 auto;
+    @include breakpoint($screen-sm) {
+      margin-bottom: -50px;
+    }
   }
 }
 
@@ -295,9 +301,6 @@
   background-size: cover;
   position: relative;
   z-index: 1;
-  // .no-touch & {
-  //   background-attachment: fixed;
-  // }
   &:before {
     content: '';
     position: absolute;
