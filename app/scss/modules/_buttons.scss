@@ -43,6 +43,10 @@
 
 .btn-bordered {
   @include button-variant(#fefefe, transparent, #fefefe);
+  &:hover {
+    background-color: #fff;
+    color: $text-color;
+  }
 }
 
 .btn-bordered_primary {
