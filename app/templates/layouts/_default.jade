@@ -1,0 +1,24 @@
+include ../helpers/_mixins
+
+doctype html
+
+html.no-js(lang='')
+  include ../../_head
+  body
+    #wrapper
+      // Header
+      include ../blocks/_header
+      // end Header
+
+      // main-content
+      main.main-content
+        block content
+      // end main-content
+
+      // Footer
+      include ../blocks/_footer
+      // end Footer
+
+    // #wrapper
+
+    block modals

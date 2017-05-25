@@ -1,0 +1,121 @@
+extends templates/layouts/_default
+
+block head
+  - pageTitle = "project title";
+
+block content
+  section.section-clients#showw-more
+    .container
+      .clients-list.revealOnScroll(data-animation="fadeIn", data-timeout="1500")
+        .clients-list-i
+          a(href="").clients-list-i-link
+            img(src="img/clients/client01.png", alt="").img-responsive
+        .clients-list-i
+          a(href="").clients-list-i-link
+            img(src="img/clients/client02.png", alt="").img-responsive
+        .clients-list-i
+          a(href="").clients-list-i-link
+            img(src="img/clients/client03.png", alt="").img-responsive
+        .clients-list-i
+          a(href="").clients-list-i-link
+            img(src="img/clients/client04.png", alt="").img-responsive
+        .clients-list-i
+          a(href="").clients-list-i-link
+            img(src="img/clients/client05.png", alt="").img-responsive
+        .clients-list-i
+          a(href="").clients-list-i-link
+            img(src="img/clients/client06.png", alt="").img-responsive
+  section.section-features
+    .container.container_features
+      .row
+        .col-sm-6.col-md-6.revealOnScroll(data-animation="fadeInLeft", data-timeout="300")
+          .feature-cnt
+            h4.feature__title Create your landing page with semi to start your campaign.
+            h5.feature__subtitle Engage Users
+            .feature__text-w
+              p Class aptent taciti sociosqu ad litora torquent per conubia nostra, inceptos himenaeos.
+        .col-sm-6.col-md-5.col-md-offset-1.revealOnScroll(data-animation="fadeInRight", data-timeout="500")
+          .embed-responsive.embed-responsive-16by9
+            iframe(width="560" height="315" src="https://www.youtube.com/embed/9EBlLBenBfw" frameborder="0" allowfullscreen).embed-responsive-item 
+
+  section.section-benefits
+    .container
+      .row
+        .col-sm-4
+          .benefit-i.revealOnScroll(data-animation="slideInUp", data-timeout="500")
+            .benefit_icon-w
+              i.sprite-megaphone
+            .benefit__cnt
+              h4.benefit_title Start your campaign
+              .benefit_info
+                p Sed duis odio sit amet nibh vulputate vie a amet mauris. Morbi viele accumsan ipsm velit nam nec tellus odio tincidunt.
+        .col-sm-4
+          .benefit-i.revealOnScroll(data-animation="slideInUp", data-timeout="1000")
+            .benefit_icon-w
+              i.sprite-user
+            .benefit__cnt
+              h4.benefit_title Engage new users
+              .benefit_info
+                p Sed duis odio sit amet nibh vulputate vie a amet mauris. Morbi viele accumsan ipsm velit nam nec tellus odio tincidunt.
+        .col-sm-4
+          .benefit-i.revealOnScroll(data-animation="slideInUp", data-timeout="1500")
+            .benefit_icon-w
+              i.sprite-bar-chart
+            .benefit__cnt
+              h4.benefit_title Claim your reward
+              .benefit_info
+                p Sed duis odio sit amet nibh vulputate vie a amet mauris. Morbi viele accumsan ipsm velit nam nec tellus odio tincidunt.
+
+
+  section.section-testimonial
+    .container
+      .row
+        .col-sm-5
+          .testimonial__img-w.revealOnScroll(data-animation="bounceIn", data-timeout="1000")
+            img(src="img/testimonial-img.png", alt="Testimonial autor").img-responsive
+        .col-sm-7
+          .testimonial__cnt.revealOnScroll(data-animation="bounceIn", data-timeout="1500")
+            .testimonial__text
+              p “We are excited to launch our new service, By using semi it has a great features, I think you’re all about to make me happy.”
+            .testimonial__autor Mark Smith
+            .testimonial__autor-info Envato Inc
+
+
+  section.section-pricing
+    .container
+      .row
+        .col-sm-4
+          .pricing-description.revealOnScroll(data-animation="fadeIn", data-timeout="500")
+            h3.section-title Suitable plans for business
+            .section-text
+              .section-text_large Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt labore et dolore magna aliqua, ute enim
+              .section-text_small Need to customize a plan ?
+              a(href="#").link-u.small Contact us
+        .col-sm-4
+          .pricing-plan-i.active.revealOnScroll(data-animation="fadeIn", data-timeout="1000")
+            .pricing-plan__title Free
+            .pricing-plan__price
+              img(src="img/free-plan.png", alt="").img-responsive
+            .pricing-plan__info
+              p Lorem ipsum dosit amet, aonsecter adipisicing elite eiusmod tempor incid viele labore dolre.
+            .pricing-plan__btn-w
+              a(href="#").btn.btn-lg.btn-block.btn_rounded.btn_up.btn-bordered_primary Get Started
+        .col-sm-4
+          .pricing-plan-i.revealOnScroll(data-animation="fadeIn", data-timeout="1500")
+            .pricing-plan__title Free
+            .pricing-plan__price
+              img(src="img/basic-plan.png", alt="").img-responsive
+            .pricing-plan__info
+              p Lorem ipsum dosit amet, aonsecter adipisicing elite eiusmod tempor incid viele labore dolre.
+            .pricing-plan__btn-w
+              a(href="#").btn.btn-lg.btn-block.btn_rounded.btn_up.btn-bordered_primary Get Started
+
+
+  section.section-banner.section-banner_1
+    .container
+      .slogan-w.slogan-w_header.revealOnScroll(data-animation="fadeIn", data-timeout="1500")
+        p.slogan.slogan-lg Your service is ready
+        p.slogan.slogan-md Whatever the level of support you require, we are sure that we will have a package that meets your needs.
+        .slogan__btn-w
+          a(href="#").btn.btn-bordered.btn-lg.btn_up.btn_mw-170 Call to action
+

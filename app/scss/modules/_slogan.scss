@@ -1,0 +1,42 @@
+.slogan-w {
+  margin-bottom: 50px;
+  @include breakpoint($screen-sm) {
+    margin-bottom: 70px;
+  }
+}
+
+.slogan {
+  color: #fff;
+  text-align: center;
+  font-size: 14px;
+  line-height: 1.5;
+  font-weight: 400;
+  @include breakpoint($screen-sm) {
+    font-size: 18px;
+  }
+}
+
+.slogan-lg {
+  font-family: Montserrat, sans-serif;
+  font-size: 30px;
+  font-weight: 400;
+  max-width: 800px;
+  margin: 0 auto 20px;
+  @include breakpoint($screen-sm) {
+    font-size: 50px;
+  }
+}
+
+.slogan-md {
+  font-size: 16px;
+  max-width: 620px;
+  margin: 0 auto 20px;
+  @include breakpoint($screen-sm) {
+    font-size: 20px;
+  }
+}
+
+.slogan__btn-w {
+  text-align: center;
+  padding-top: 30px;
+}

@@ -1,0 +1,8 @@
+[class*="sprite-"] {display:inline-block; vertical-align: middle; overflow:hidden;}
+
+// $sprite1x
+$disable-magic-sprite-selectors: true;
+$sprite-sprite-dimensions: true;
+$sprite-spacing: 10px;
+@import "sprite/*.png";
+@include all-sprite-sprites;

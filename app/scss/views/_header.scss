@@ -1,0 +1,71 @@
+//##################
+// header
+//##################
+.container-wrap__header {
+  background: url(../img/office-meet.jpg) top center;
+  background-size: cover;
+  background-attachment: fixed;
+  position: relative;
+  z-index: 1;
+  &:before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(#333, .6);
+    z-index: 2;
+  }
+}
+
+.container-slogan-w {
+  padding-top: 70px;
+  padding-bottom: 70px;
+  @include breakpoint($screen-sm) {
+    padding-top: 150px;
+    padding-bottom: 150px;
+  }
+}
+
+.main-header {
+  min-height: 100vh;
+  position: relative;
+  z-index: 3;
+}
+
+.logo-w {
+  text-align: center;
+  margin: 0;
+  padding-top: 15px;
+  @include breakpoint($screen-sm) {
+    text-align: left;
+    padding-top: 55px;
+  }
+}
+
+.logo-link {
+  display: inline-block;
+}
+
+.container__logo {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+}
+
+
+.show-more-w {
+  position: absolute;
+  left: 50%;
+  z-index: 3;
+  bottom: 20px;
+  @include breakpoint($screen-sm) {
+    bottom: 90px;
+  }
+}
+
+//##################
+// end header
+//##################

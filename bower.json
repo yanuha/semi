@@ -1,0 +1,19 @@
+{
+  "name": "project title",
+  "version": "0.0.1",
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap-sass": "~3.3.*",
+    "jquery": "~1.*",
+    "modernizr": "~2.*",
+    "animate.css": "^3.5.2"
+  },
+  "devDependencies": {}
+}

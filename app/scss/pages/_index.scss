@@ -1,0 +1,312 @@
+.form__c-to-a {
+  max-width: 830px;
+  margin: 0 auto;
+}
+
+.c-to-a__col {
+  @include breakpoint($screen-sm) {
+    float: left;
+    &:not(:last-child) {
+      margin-right: 30px;
+    }
+  }
+}
+
+.c-to-a__col-1 {
+  @include breakpoint($screen-sm) {
+    width: calc( (200/830*100%) - 30px);
+  }
+}
+
+.c-to-a__col-2 {
+  @include breakpoint($screen-sm) {
+    width: calc( (370/830*100%) - 30px);
+  }
+}
+
+.c-to-a__col-3 {
+  @include breakpoint($screen-sm) {
+    width: calc(200/830*100%);
+  }
+}
+
+
+
+// .section-clients
+
+.section-clients {
+  background-color: #fafafa;
+  padding: 30px 0;
+}
+
+.clients-list {
+  text-align: center;
+}
+
+.clients-list-i {
+  width: 140px;
+  margin: 5px;
+  display: inline-block;
+  opacity: .5;
+  &:hover {
+    opacity: 1;
+  }
+  img {
+    margin: 0 auto;
+  }
+}
+
+.clients-list-i-link {
+  display: block;
+}
+
+
+// .section_features
+
+.container_features {
+  border-bottom: 1px solid #f0f0f0;
+  padding-top: 30px;
+  padding-bottom: 30px;
+  @include breakpoint($screen-sm) {
+    padding-top: 100px;
+    padding-bottom: 100px;
+  }
+}
+
+.feature__title {
+  color: #333;
+  font-family: Montserrat, sans-serif;
+  font-size: 25px;
+  font-weight: 400;
+  margin-bottom: 30px;
+  @include breakpoint($screen-sm) {
+    font-size: 30px;
+    margin-bottom: 50px;
+  }
+}
+
+.feature__subtitle {
+  text-transform: uppercase;
+  color: #333;
+  font-family: Montserrat, sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+}
+
+.feature__text-w {
+  line-height: 24px;
+}
+
+
+// .section-testimonial
+
+
+.section-testimonial {
+  background-color: #fafafa;
+}
+
+.testimonial__cnt {
+  padding: 30px 30px;
+  @include breakpoint($screen-sm) {
+    padding: 150px 60px;
+  }
+}
+
+.testimonial__text {
+  color: #999;
+  font-family: Merriweather, sans-serif;
+  font-size: 20px;
+  font-style: italic;
+  margin-bottom: 30px;
+  line-height: 1.6;
+  @include breakpoint($screen-sm) {
+    font-size: 16px;
+    margin-bottom: 15px;
+  }
+}
+
+.testimonial__autor {
+  color: #363636;
+  font-family: Montserrat, sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+}
+.testimonial__autor-info {
+  font-size: 12px;
+  font-weight: 400;
+}
+
+.testimonial__img-w {
+  img {
+    margin: 0 auto;
+  }
+}
+
+// .section-benefits
+
+.benefit-i {
+  margin-bottom: 20px;
+  clear: both;
+}
+
+.section-benefits {
+  padding: 30px 0 10px;
+  @include breakpoint($screen-sm) {
+    padding: 90px 0 70px;
+  }
+}
+
+.benefit_icon-w {
+  margin-bottom: 35px;
+  line-height: 55px;
+  min-height: 55px;
+  min-width: 55px;
+  margin-right: 20px;
+  float: left;
+  text-align: center;
+  @include breakpoint($screen-sm) {
+    float: none;
+    text-align: left;
+  }
+}
+
+.benefit__cnt {
+  overflow: hidden;
+}
+
+.benefit_title {
+  color: #333;
+  font-family: Montserrat, sans-serif;
+  font-size: 18px;
+  font-weight: 400;
+  margin-bottom: 10px;
+  @include breakpoint($screen-sm) {
+    margin-bottom: 20px;
+  }
+}
+
+
+// section-pricing
+
+.pricing-description {
+  margin-bottom: 20px;
+  @include breakpoint($screen-sm) {
+    padding-top: 80px;
+  }
+}
+
+.section-text_large {
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 29px;
+  margin-bottom: 30px;
+}
+
+.section-text_small {
+  margin-bottom: 10px;
+}
+
+.section-title {
+  color: #333;
+  font-family: Montserrat, sans-serif;
+  font-weight: 400;
+  font-size: 20px;
+  @include breakpoint($screen-sm) {
+    margin: 0 0 40px;
+    font-size: 36px;
+  }
+}
+
+.section-pricing {
+  padding-top: 30px;
+  padding-bottom: 30px;
+  @include breakpoint($screen-sm) {
+    padding-top: 100px;
+    padding-bottom: 100px;
+  }
+}
+
+.pricing-plan-i {
+  text-align: center;
+  margin-bottom: 20px;
+  border: 1px solid #f0f0f0;
+  padding: 20px;
+  @include breakpoint($screen-sm) {
+    padding: 50px;
+  }
+  &:hover {
+    background-color: #fafafa;
+    .btn {
+      @extend .btn_primary-gr;
+    }
+  }
+}
+
+.pricing-plan__title {
+  color: $gray-dark;
+  font-family: Montserrat, sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 28px;
+  text-transform: uppercase;
+  margin-bottom: 15px;
+  @include breakpoint($screen-sm) {
+    margin-bottom: 30px;
+  }
+}
+
+.pricing-plan__price {
+  img {
+    padding-left: 20px;
+    margin: 0 auto;
+    margin-bottom: 15px;
+    @include breakpoint($screen-sm) {
+      margin-bottom: 30px;
+    }
+  }
+}
+
+.pricing-plan__info {
+  color: #999;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 27px;
+  margin-bottom: 15px;
+  @include breakpoint($screen-sm) {
+    margin-bottom: 40px;
+  }
+}
+
+// .section-banner
+
+.section-banner {
+  padding-top: 50px;
+  padding-bottom: 50px;
+  @include breakpoint($screen-sm) {
+    padding-top: 100px;
+    padding-bottom: 100px;
+  }
+}
+
+.section-banner_1 {
+  background: url(../img/background-42.jpg) top center;
+  background-size: cover;
+  position: relative;
+  z-index: 1;
+  &:before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(#333, .6);
+    z-index: 2;
+  }
+  > * {
+    position: relative;
+    z-index: 3;
+  }
+}

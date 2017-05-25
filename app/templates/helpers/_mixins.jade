@@ -1,0 +1,15 @@
+mixin svg_ie8(svg_icon, width, height)
+  <!--[if gte IE 9]><!-->
+  img(src="img/svg/" + svg_icon + ".svg", width=width, height=height alt="")
+  <!--<![endif]--> <!--[if lt IE 9]>
+  img(src="img/png/" + svg_icon + ".png", width=width, height=height alt="")
+  <![endif]-->
+
+mixin nav_item(href, active)
+  li(class=active): a( href=href )
+    block
+
+mixin ie(condition)
+  | <!--[!{condition}]>
+  block
+  | <![endif]-->

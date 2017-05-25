@@ -1,0 +1,50 @@
+.btn {
+  font-family: Montserrat, sans-serif;
+}
+
+.btn_up {
+  text-transform: uppercase;
+  font-size: 12px;
+  line-height: 23px;
+}
+
+.btn_mw-170 {
+  min-width: 170px;
+}
+
+.btn_mw-200 {
+  min-width: 200px;
+}
+
+.btn_primary-gr {
+  background-image: linear-gradient(to right, #5f72bd 0%, #9b23ea 100%);
+  border: none;
+  padding-top: ($padding-base-vertical + 1);
+  padding-bottom: ($padding-base-vertical + 1);
+  color: #fff;
+  &:hover {
+    background-image: linear-gradient(to right, darken(#5f72bd, 5%) 0%, darken(#9b23ea, 5%) 100%);
+  }
+  &.btn-sm {
+    padding-top: ($padding-small-vertical + 1);
+    padding-bottom: ($padding-small-vertical + 1);
+  }
+  &.btn-lg {
+    padding-top: ($padding-large-vertical + 1);
+    padding-bottom: ($padding-large-vertical + 1);
+  }
+}
+
+.btn_rounded {
+  &.btn-lg {
+    border-radius: 23px;
+  }
+}
+
+.btn-bordered {
+  @include button-variant(#fefefe, transparent, #fefefe);
+}
+
+.btn-bordered_primary {
+  @include button-variant($brand-primary, transparent, $brand-primary);
+}

@@ -1,0 +1,65 @@
+// ==========================================================================
+//    Author's custom styles
+// ==========================================================================
+html {
+  font-size: 62.5%;
+}
+
+body {
+  min-width: 320px;
+  margin: 0 auto;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type="number"] {
+  -moz-appearance: textfield;
+}
+
+
+.container_v-center {
+  min-height: 100vh;
+  display: flex;
+}
+
+.cnt_v-center {
+  margin-bottom: auto;
+  margin-top: auto;
+  width: 100%;
+  flex: 1;
+}
+
+.link-u {
+  text-decoration: underline;
+  &:hover {
+    text-decoration: none;
+  }
+}
+
+.large {
+  font-size: $font-size-large;
+}
+
+.revealOnScroll,
+.showRevealOnScroll
+{
+    opacity: 0;
+}
+
+.revealOnScroll,
+.showRevealOnScroll
+{
+    &.animated
+    {
+        opacity: 1;
+    }
+}

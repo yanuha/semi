@@ -1,0 +1,27 @@
+.container-wrap.container-wrap__header
+  header.main-header
+    .container__logo
+      .container
+        h1.logo-w
+          a(href="").logo-link
+            img(src="img/logo.png", alt="SEMI logo", width="79", height="27")
+            span.sr-only SEMI
+    .container.container-slogan-w.container_v-center
+      .cnt_v-center
+        .slogan-w.slogan-w_header
+          h2.slogan.slogan-lg.revealOnScroll(data-animation="zoomInLeft", data-timeout="50") Your service is ready for launch
+          h3.slogan.slogan-md.revealOnScroll(data-animation="zoomInRight", data-timeout="300") Whatever the level of support you require, we are sure that we will have a package that meets your needs.
+        form(action="").form__c-to-a.clearfix.revealOnScroll(data-animation="zoomInUp", data-timeout="500")
+          .c-to-a__col.c-to-a__col-1
+            .form-group
+              input(type="text", placeholder="Full name").form-control.form-control_opacity.input-lg
+          .c-to-a__col.c-to-a__col-2
+            .form-group
+              input(type="text", placeholder="@yoursite.com").form-control.form-control_opacity.input-lg
+          .c-to-a__col.c-to-a__col-3
+            .form-group
+              button(type="submit").btn.btn-lg.btn-primary.btn-block.btn_primary-gr.btn_up Call To Action
+    .show-more-w
+      a(href="#showw-more").show-more-btn.go-to
+        i.sprite-arrow-down
+        span.sr-only Show more

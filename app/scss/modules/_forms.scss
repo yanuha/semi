@@ -1,0 +1,6 @@
+.form-control_opacity {
+  border: none;
+  background-color: rgba(#fff, .3);
+  color: #fff;
+  @include placeholder(#eee);
+}
