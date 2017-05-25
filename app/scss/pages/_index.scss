@@ -14,13 +14,13 @@
 
 .c-to-a__col-1 {
   @include breakpoint($screen-sm) {
-    width: calc( (200/830*100%) - 30px);
+    width: calc((230/830*100%) - 30px);
   }
 }
 
 .c-to-a__col-2 {
   @include breakpoint($screen-sm) {
-    width: calc( (370/830*100%) - 30px);
+    width: calc((400/830*100%) - 30px);
   }
 }
 

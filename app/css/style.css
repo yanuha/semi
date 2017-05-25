@@ -6110,11 +6110,11 @@ input[type="number"] {
 
 @media (min-width: 768px) {
   .c-to-a__col-1 {
-    width: calc( (200/830*100%) - 30px); } }
+    width: calc((230/830*100%) - 30px); } }
 
 @media (min-width: 768px) {
   .c-to-a__col-2 {
-    width: calc( (370/830*100%) - 30px); } }
+    width: calc((400/830*100%) - 30px); } }
 
 @media (min-width: 768px) {
   .c-to-a__col-3 {
