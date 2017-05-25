@@ -6179,7 +6179,7 @@ input[type="number"] {
   padding: 30px 10px; }
   @media (min-width: 768px) {
     .testimonial__cnt {
-      padding: 150px 60px; } }
+      padding: 150px 60px 50px 40px; } }
 
 .testimonial__text {
   color: #999;
@@ -6203,8 +6203,14 @@ input[type="number"] {
   font-size: 12px;
   font-weight: 400; }
 
+@media (min-width: 768px) {
+  .testimonial__img-w {
+    margin-top: -50px; } }
 .testimonial__img-w img {
   margin: 0 auto; }
+  @media (min-width: 768px) {
+    .testimonial__img-w img {
+      margin-bottom: -50px; } }
 
 .benefit-i {
   margin-bottom: 20px;
