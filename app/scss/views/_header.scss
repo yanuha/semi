@@ -4,9 +4,11 @@
 .container-wrap__header {
   background: url(../img/office-meet.jpg) top center;
   background-size: cover;
-  background-attachment: fixed;
   position: relative;
   z-index: 1;
+  .no-touch & {
+    background-attachment: fixed;
+  }
   &:before {
     content: '';
     position: absolute;

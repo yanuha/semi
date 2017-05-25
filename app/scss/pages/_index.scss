@@ -44,7 +44,7 @@
 }
 
 .clients-list-i {
-  width: 140px;
+  width: 130px;
   margin: 5px;
   display: inline-block;
   opacity: .5;
@@ -295,6 +295,9 @@
   background-size: cover;
   position: relative;
   z-index: 1;
+  // .no-touch & {
+  //   background-attachment: fixed;
+  // }
   &:before {
     content: '';
     position: absolute;

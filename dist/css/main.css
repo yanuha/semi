@@ -6036,9 +6036,10 @@ input[type="number"] {
 .container-wrap__header {
   background: url(../img/office-meet.jpg) top center;
   background-size: cover;
-  background-attachment: fixed;
   position: relative;
   z-index: 1; }
+  .no-touch .container-wrap__header {
+    background-attachment: fixed; }
   .container-wrap__header:before {
     content: '';
     position: absolute;
@@ -6119,7 +6120,7 @@ input[type="number"] {
   text-align: center; }
 
 .clients-list-i {
-  width: 140px;
+  width: 130px;
   margin: 5px;
   display: inline-block;
   opacity: .5; }
