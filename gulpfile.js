@@ -17,6 +17,8 @@ var     csso            = require('gulp-csso');
 var     cssnano         = require('gulp-cssnano');
 var     pugInheritance  = require('gulp-pug-inheritance');
 var     pug             = require('gulp-pug');
+var     jadeInheritance  = require('gulp-jade-inheritance');
+var     jade             = require('gulp-jade');
 var     changed         = require('gulp-changed');
 var     cached          = require('gulp-cached');
 var     gulpif          = require('gulp-if');
@@ -110,7 +112,7 @@ gulp.task('fonts', function() {
 
 // Bower
 gulp.task('bower', function () {
-  gulp.src('app/_head.pug')
+  gulp.src('app/_head.jade')
     .pipe(wiredep({
       directory : "app/bower_components"
     }))
@@ -120,24 +122,24 @@ gulp.task('bower', function () {
 
 
 // PUG
-gulp.task('pug', function() {
-    return gulp.src('app/**/*.pug')
+gulp.task('jade', function() {
+    return gulp.src('app/**/*.jade')
 
     //only pass unchanged *main* files and *all* the partials 
     .pipe(changed('app', { extension: '.html' }))
 
     //filter out unchanged partials, but it only works when watching 
-    .pipe(gulpif(global.isWatching, cached('pug')))
+    .pipe(gulpif(global.isWatching, cached('jade')))
 
     //find files that depend on the files that have changed 
-    .pipe(pugInheritance({ basedir: 'app', skip: 'node_modules' }))
+    .pipe(jadeInheritance({ basedir: 'app', skip: 'node_modules' }))
 
     //filter out partials (folders and files starting with "_" ) 
     .pipe(filter(function(file) {
       return !/\/_/.test(file.path) && !/^_/.test(file.relative);
     }))
     .pipe(plumber())
-    .pipe(pug({
+    .pipe(jade({
         pretty: true
     }))
     .on("error", notify.onError(function(error) {
@@ -179,10 +181,10 @@ var plumberErrorHandler = { errorHandler: notify.onError({
     })
 };
 
-gulp.task('watch', ['browser-sync', 'sprite', 'style', 'setWatch', 'pug', 'bower'], function() {
+gulp.task('watch', ['browser-sync', 'sprite', 'style', 'setWatch', 'jade', 'bower'], function() {
     gulp.watch('app/scss/**/*.scss', ['style'])
     gulp.watch('bower.json', ['bower'])
-    gulp.watch('app/**/*.pug', ['setWatch', 'pug'])
+    gulp.watch('app/**/*.jade', ['setWatch', 'jade'])
 });
 
 

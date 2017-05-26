@@ -6180,6 +6180,8 @@ input[type="number"] {
   display: inline-block;
   opacity: .5; }
   .clients-list-i:hover {
+    -webkit-transform: scale(1.2);
+    transform: scale(1.2);
     opacity: 1; }
   .clients-list-i img {
     margin: 0 auto; }
@@ -6335,6 +6337,8 @@ input[type="number"] {
   border: 1px solid #f0f0f0;
   padding: 20px; }
   .pricing-plan-i:hover {
+    -webkit-transform: scale(1.05);
+    transform: scale(1.05);
     background-color: #fafafa; }
   @media (min-width: 768px) {
     .pricing-plan-i {

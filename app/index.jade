@@ -3,10 +3,11 @@ extends templates/layouts/_default
 block head
   - pageTitle = "SEMI";
 
+
 block content
   section.section-clients#showw-more
     .container
-      .clients-list.revealOnScroll(data-animation="fadeIn", data-timeout="1500")
+      .clients-list
         .clients-list-i
           a(href="").clients-list-i-link
             img(src="img/clients/client01.png", alt="").img-responsive
@@ -26,6 +27,7 @@ block content
           a(href="").clients-list-i-link
             img(src="img/clients/client06.png", alt="").img-responsive
 
+
   section.section-features
     .container.container_features
       .row
@@ -43,7 +45,7 @@ block content
     .container
       .row
         .col-sm-4
-          .benefit-i.revealOnScroll(data-animation="slideInUp", data-timeout="500")
+          .benefit-i
             .benefit_icon-w
               i.sprite-megaphone
             .benefit__cnt
@@ -51,7 +53,7 @@ block content
               .benefit_info
                 p Sed duis odio sit amet nibh vulputate vie a amet mauris. Morbi viele accumsan ipsm velit nam nec tellus odio tincidunt.
         .col-sm-4
-          .benefit-i.revealOnScroll(data-animation="slideInUp", data-timeout="1000")
+          .benefit-i
             .benefit_icon-w
               i.sprite-user
             .benefit__cnt
@@ -59,14 +61,13 @@ block content
               .benefit_info
                 p Sed duis odio sit amet nibh vulputate vie a amet mauris. Morbi viele accumsan ipsm velit nam nec tellus odio tincidunt.
         .col-sm-4
-          .benefit-i.revealOnScroll(data-animation="slideInUp", data-timeout="1500")
+          .benefit-i
             .benefit_icon-w
               i.sprite-bar-chart
             .benefit__cnt
               h4.benefit_title Claim your reward
               .benefit_info
                 p Sed duis odio sit amet nibh vulputate vie a amet mauris. Morbi viele accumsan ipsm velit nam nec tellus odio tincidunt.
-
 
   section.section-testimonial
     .container
@@ -95,16 +96,16 @@ block content
           .pricing-plan-i.active.revealOnScroll(data-animation="fadeIn", data-timeout="1000")
             .pricing-plan__title Free
             .pricing-plan__price
-              img(src="img/free-plan.png", alt="").img-responsive
+              img(srcset="img/free-plan@2x.png 2x", src="img/free-plan.png", alt="").img-responsive
             .pricing-plan__info
               p Lorem ipsum dosit amet, aonsecter adipisicing elite eiusmod tempor incid viele labore dolre.
             .pricing-plan__btn-w
               a(href="#").btn.btn-lg.btn-block.btn_rounded.btn_up.btn-bordered_primary Get Started
         .col-sm-4
           .pricing-plan-i.revealOnScroll(data-animation="fadeIn", data-timeout="1500")
-            .pricing-plan__title Free
+            .pricing-plan__title Basic
             .pricing-plan__price
-              img(src="img/basic-plan.png", alt="").img-responsive
+              img(srcset="img/basic-plan@2x.png 2x", src="img/basic-plan.png", alt="").img-responsive
             .pricing-plan__info
               p Lorem ipsum dosit amet, aonsecter adipisicing elite eiusmod tempor incid viele labore dolre.
             .pricing-plan__btn-w
@@ -112,7 +113,7 @@ block content
 
   section.section-banner.section-banner_1
     .container
-      .slogan-w.slogan-w_header.revealOnScroll(data-animation="fadeIn", data-timeout="1500")
+      .slogan-w.slogan-w_header.revealOnScroll(data-animation="fadeIn", data-timeout="1000")
         p.slogan.slogan-lg Your service is ready
         p.slogan.slogan-md Whatever the level of support you require, we are sure that we will have a package that meets your needs.
         .slogan__btn-w

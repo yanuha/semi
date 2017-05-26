@@ -50,6 +50,7 @@
   opacity: .5;
   @extend %transition;
   &:hover {
+    transform: scale(1.2);
     opacity: 1;
   }
   img {
@@ -242,6 +243,7 @@
   padding: 20px;
   @extend %transition;
   &:hover {
+    transform: scale(1.05);
     background-color: #fafafa;
     .btn {
       @extend .btn_primary-gr;
