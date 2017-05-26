@@ -1,8 +1,226 @@
-[class*="sprite-"] {display:inline-block; vertical-align: middle; overflow:hidden;}
+// SCSS variables are information about icon's compiled state, stored under its original file name
+//
+// .icon-home {
+//   width: $icon-home-width;
+// }
+//
+// The large array-like variables contain all information about a single icon
+// $icon-home: x y offset_x offset_y width height total_width total_height image_path;
+//
+// At the bottom of this section, we provide information about the spritesheet itself
+// $spritesheet: width height image $spritesheet-sprites;
+$sprite-arrow-down-name: 'sprite-arrow-down';
+$sprite-arrow-down-x: 0px;
+$sprite-arrow-down-y: 0px;
+$sprite-arrow-down-offset-x: 0px;
+$sprite-arrow-down-offset-y: 0px;
+$sprite-arrow-down-width: 20px;
+$sprite-arrow-down-height: 11px;
+$sprite-arrow-down-total-width: 164px;
+$sprite-arrow-down-total-height: 157px;
+$sprite-arrow-down-image: '../img/sprite-map.png';
+$sprite-arrow-down: (0px, 0px, 0px, 0px, 20px, 11px, 164px, 157px, '../img/sprite-map.png', 'sprite-arrow-down', );
+$sprite-bar-chart-name: 'sprite-bar-chart';
+$sprite-bar-chart-x: 62px;
+$sprite-bar-chart-y: 65px;
+$sprite-bar-chart-offset-x: -62px;
+$sprite-bar-chart-offset-y: -65px;
+$sprite-bar-chart-width: 50px;
+$sprite-bar-chart-height: 45px;
+$sprite-bar-chart-total-width: 164px;
+$sprite-bar-chart-total-height: 157px;
+$sprite-bar-chart-image: '../img/sprite-map.png';
+$sprite-bar-chart: (62px, 65px, -62px, -65px, 50px, 45px, 164px, 157px, '../img/sprite-map.png', 'sprite-bar-chart', );
+$sprite-megaphone-name: 'sprite-megaphone';
+$sprite-megaphone-x: 114px;
+$sprite-megaphone-y: 112px;
+$sprite-megaphone-offset-x: -114px;
+$sprite-megaphone-offset-y: -112px;
+$sprite-megaphone-width: 50px;
+$sprite-megaphone-height: 45px;
+$sprite-megaphone-total-width: 164px;
+$sprite-megaphone-total-height: 157px;
+$sprite-megaphone-image: '../img/sprite-map.png';
+$sprite-megaphone: (114px, 112px, -114px, -112px, 50px, 45px, 164px, 157px, '../img/sprite-map.png', 'sprite-megaphone', );
+$sprite-user-name: 'sprite-user';
+$sprite-user-x: 22px;
+$sprite-user-y: 13px;
+$sprite-user-offset-x: -22px;
+$sprite-user-offset-y: -13px;
+$sprite-user-width: 38px;
+$sprite-user-height: 50px;
+$sprite-user-total-width: 164px;
+$sprite-user-total-height: 157px;
+$sprite-user-image: '../img/sprite-map.png';
+$sprite-user: (22px, 13px, -22px, -13px, 38px, 50px, 164px, 157px, '../img/sprite-map.png', 'sprite-user', );
+$sprite-arrow-down-2x-name: 'sprite-arrow-down@2x';
+$sprite-arrow-down-2x-x: 0px;
+$sprite-arrow-down-2x-y: 0px;
+$sprite-arrow-down-2x-offset-x: 0px;
+$sprite-arrow-down-2x-offset-y: 0px;
+$sprite-arrow-down-2x-width: 40px;
+$sprite-arrow-down-2x-height: 22px;
+$sprite-arrow-down-2x-total-width: 328px;
+$sprite-arrow-down-2x-total-height: 314px;
+$sprite-arrow-down-2x-image: '../img/sprite-map@2x.png';
+$sprite-arrow-down-2x: (0px, 0px, 0px, 0px, 40px, 22px, 328px, 314px, '../img/sprite-map@2x.png', 'sprite-arrow-down@2x', );
+$sprite-bar-chart-2x-name: 'sprite-bar-chart@2x';
+$sprite-bar-chart-2x-x: 124px;
+$sprite-bar-chart-2x-y: 130px;
+$sprite-bar-chart-2x-offset-x: -124px;
+$sprite-bar-chart-2x-offset-y: -130px;
+$sprite-bar-chart-2x-width: 100px;
+$sprite-bar-chart-2x-height: 90px;
+$sprite-bar-chart-2x-total-width: 328px;
+$sprite-bar-chart-2x-total-height: 314px;
+$sprite-bar-chart-2x-image: '../img/sprite-map@2x.png';
+$sprite-bar-chart-2x: (124px, 130px, -124px, -130px, 100px, 90px, 328px, 314px, '../img/sprite-map@2x.png', 'sprite-bar-chart@2x', );
+$sprite-megaphone-2x-name: 'sprite-megaphone@2x';
+$sprite-megaphone-2x-x: 228px;
+$sprite-megaphone-2x-y: 224px;
+$sprite-megaphone-2x-offset-x: -228px;
+$sprite-megaphone-2x-offset-y: -224px;
+$sprite-megaphone-2x-width: 100px;
+$sprite-megaphone-2x-height: 90px;
+$sprite-megaphone-2x-total-width: 328px;
+$sprite-megaphone-2x-total-height: 314px;
+$sprite-megaphone-2x-image: '../img/sprite-map@2x.png';
+$sprite-megaphone-2x: (228px, 224px, -228px, -224px, 100px, 90px, 328px, 314px, '../img/sprite-map@2x.png', 'sprite-megaphone@2x', );
+$sprite-user-2x-name: 'sprite-user@2x';
+$sprite-user-2x-x: 44px;
+$sprite-user-2x-y: 26px;
+$sprite-user-2x-offset-x: -44px;
+$sprite-user-2x-offset-y: -26px;
+$sprite-user-2x-width: 76px;
+$sprite-user-2x-height: 100px;
+$sprite-user-2x-total-width: 328px;
+$sprite-user-2x-total-height: 314px;
+$sprite-user-2x-image: '../img/sprite-map@2x.png';
+$sprite-user-2x: (44px, 26px, -44px, -26px, 76px, 100px, 328px, 314px, '../img/sprite-map@2x.png', 'sprite-user@2x', );
+$spritesheet-width: 164px;
+$spritesheet-height: 157px;
+$spritesheet-image: '../img/sprite-map.png';
+$spritesheet-sprites: ($sprite-arrow-down, $sprite-bar-chart, $sprite-megaphone, $sprite-user, );
+$spritesheet: (164px, 157px, '../img/sprite-map.png', $spritesheet-sprites, );
+$retina-spritesheet-width: 328px;
+$retina-spritesheet-height: 314px;
+$retina-spritesheet-image: '../img/sprite-map@2x.png';
+$retina-spritesheet-sprites: ($sprite-arrow-down-2x, $sprite-bar-chart-2x, $sprite-megaphone-2x, $sprite-user-2x, );
+$retina-spritesheet: (328px, 314px, '../img/sprite-map@2x.png', $retina-spritesheet-sprites, );
 
-// $sprite1x
-$disable-magic-sprite-selectors: true;
-$sprite-sprite-dimensions: true;
-$sprite-spacing: 10px;
-@import "sprite/*.png";
-@include all-sprite-sprites;
+// These "retina group" variables are mappings for the naming and pairing of normal and retina sprites.
+//
+// The list formatted variables are intended for mixins like `retina-sprite` and `retina-sprites`.
+$sprite-arrow-down-group-name: 'sprite-arrow-down';
+$sprite-arrow-down-group: ('sprite-arrow-down', $sprite-arrow-down, $sprite-arrow-down-2x, );
+$sprite-bar-chart-group-name: 'sprite-bar-chart';
+$sprite-bar-chart-group: ('sprite-bar-chart', $sprite-bar-chart, $sprite-bar-chart-2x, );
+$sprite-megaphone-group-name: 'sprite-megaphone';
+$sprite-megaphone-group: ('sprite-megaphone', $sprite-megaphone, $sprite-megaphone-2x, );
+$sprite-user-group-name: 'sprite-user';
+$sprite-user-group: ('sprite-user', $sprite-user, $sprite-user-2x, );
+$retina-groups: ($sprite-arrow-down-group, $sprite-bar-chart-group, $sprite-megaphone-group, $sprite-user-group, );
+
+// The provided mixins are intended to be used with the array-like variables
+//
+// .icon-home {
+//   @include sprite-width($icon-home);
+// }
+//
+// .icon-email {
+//   @include sprite($icon-email);
+// }
+//
+// Example usage in HTML:
+//
+// `display: block` sprite:
+// <div class="icon-home"></div>
+//
+// To change `display` (e.g. `display: inline-block;`), we suggest using a common CSS class:
+//
+// // CSS
+// .icon {
+//   display: inline-block;
+// }
+//
+// // HTML
+// <i class="icon icon-home"></i>
+@mixin sprite-width($sprite) {
+  width: nth($sprite, 5);
+}
+
+@mixin sprite-height($sprite) {
+  height: nth($sprite, 6);
+}
+
+@mixin sprite-position($sprite) {
+  $sprite-offset-x: nth($sprite, 3);
+  $sprite-offset-y: nth($sprite, 4);
+  background-position: $sprite-offset-x  $sprite-offset-y;
+}
+
+@mixin sprite-image($sprite) {
+  $sprite-image: nth($sprite, 9);
+  background-image: url(#{$sprite-image});
+}
+
+@mixin sprite($sprite) {
+  @include sprite-image($sprite);
+  @include sprite-position($sprite);
+  @include sprite-width($sprite);
+  @include sprite-height($sprite);
+}
+
+// The `retina-sprite` mixin sets up rules and a media query for a sprite/retina sprite.
+//   It should be used with a "retina group" variable.
+//
+// The media query is from CSS Tricks: https://css-tricks.com/snippets/css/retina-display-media-query/
+//
+// $icon-home-group: ('icon-home', $icon-home, $icon-home-2x, );
+//
+// .icon-home {
+//   @include retina-sprite($icon-home-group);
+// }
+@mixin sprite-background-size($sprite) {
+  $sprite-total-width: nth($sprite, 7);
+  $sprite-total-height: nth($sprite, 8);
+  background-size: $sprite-total-width $sprite-total-height;
+}
+
+@mixin retina-sprite($retina-group) {
+  $normal-sprite: nth($retina-group, 2);
+  $retina-sprite: nth($retina-group, 3);
+  @include sprite($normal-sprite);
+
+  @media (-webkit-min-device-pixel-ratio: 2),
+         (min-resolution: 192dpi) {
+    @include sprite-image($retina-sprite);
+    @include sprite-background-size($normal-sprite);
+  }
+}
+
+// The `sprites` mixin generates identical output to the CSS template
+//   but can be overridden inside of SCSS
+//
+// @include sprites($spritesheet-sprites);
+@mixin sprites($sprites) {
+  @each $sprite in $sprites {
+    $sprite-name: nth($sprite, 10);
+    .#{$sprite-name} {
+      @include sprite($sprite);
+    }
+  }
+}
+
+// The `retina-sprites` mixin generates a CSS rule and media query for retina groups
+//   This yields the same output as CSS retina template but can be overridden in SCSS
+//
+// @include retina-sprites($retina-groups);
+@mixin retina-sprites($retina-groups) {
+  @each $retina-group in $retina-groups {
+    $sprite-name: nth($retina-group, 1);
+    .#{$sprite-name} {
+      @include retina-sprite($retina-group);
+    }
+  }
+}

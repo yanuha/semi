@@ -63,3 +63,5 @@ input[type="number"] {
         opacity: 1;
     }
 }
+
+[class*="sprite-"] {display:inline-block; vertical-align: middle; overflow:hidden;}

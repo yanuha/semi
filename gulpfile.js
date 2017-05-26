@@ -9,12 +9,14 @@ var     uglify          = require('gulp-uglify');
 var     notify          = require('gulp-notify');
 var     del             = require('del');
 var     useref          = require('gulp-useref');
-var     compass         = require('gulp-compass');
+var     spritesmith     = require('gulp.spritesmith');
+var     sass            = require('gulp-sass');
+var     sassGlob        = require('gulp-sass-glob');
 var     autoprefixer    = require('gulp-autoprefixer');
 var     csso            = require('gulp-csso');
 var     cssnano         = require('gulp-cssnano');
-var     jadeInheritance = require('gulp-jade-inheritance');
-var     jade            = require('gulp-jade');
+var     pugInheritance  = require('gulp-pug-inheritance');
+var     pug             = require('gulp-pug');
 var     changed         = require('gulp-changed');
 var     cached          = require('gulp-cached');
 var     gulpif          = require('gulp-if');
@@ -41,32 +43,61 @@ gulp.task('clean', function(cb) {
 });
 
 // Build
-gulp.task('build', ['copym', 'copyico', 'fonts'], function () {
+gulp.task('build', ['copym', 'copyBackend', 'copyFavicon', 'fonts'], function () {
     return gulp.src('app/*.html')
+        .pipe(useref())
         .pipe(gulpif('*.js', uglify()))
         .pipe(gulpif('*.css', cssnano()))
-        .pipe(useref())
         .pipe(gulp.dest('dist'));
 });
+
+// copy content
 
 gulp.task('copym', function () {
     return gulp.src(['app/img/**/*.{png,jpg,gif,svg}'])
         .pipe(imagemin({
             progressive: true,
-            svgminPlugins: [{removeViewBox: false}],
+            svgminPlugins: [{removeViewBox: true}],
             use: [pngquant()]
         }))
         .pipe(gulp.dest('dist/img'));
-    gulp.src(['app/favicon/*.{png,ico}'])
-        .pipe(gulp.dest('dist/favicon'));
-    gulp.src(['app/img-backend/*.{png,jpg,gif,svg}'])
+});
+
+gulp.task('copyBackend', function () {
+    return gulp.src(['app/img-backend/*.{png,jpg,gif,svg}'])
+        .pipe(imagemin({
+            progressive: true,
+            svgminPlugins: [{removeViewBox: true}],
+            use: [pngquant()]
+        }))
         .pipe(gulp.dest('dist/img-backend'));
 });
 
-// copyico
-gulp.task('copyico', function () {
-    return  gulp.src(['app/favicon/**/*'])
+gulp.task('copyFavicon', function () {
+    return gulp.src(['app/favicon/*.{png,ico}'])
         .pipe(gulp.dest('dist/favicon'));
+});
+
+// Sprite
+
+gulp.task('sprite', function() {
+    var spriteData = 
+        gulp.src('app/img/sprite/*.*')
+            .pipe(plumber(plumberErrorHandler))
+            .pipe(spritesmith({
+                retinaSrcFilter: 'app/img/sprite/*@2x.png',
+                retinaImgName: '../img/sprite-map@2x.png',
+                imgName: '../img/sprite-map.png',
+                cssName: '_sprite.scss',
+                algorithm: 'diagonal',
+                padding: 2,
+                cssVarMap: function(sprite) {
+                    sprite.name = 'sprite-' + sprite.name
+                }
+            }));
+
+    spriteData.img.pipe(gulp.dest('app/img/'));
+    spriteData.css.pipe(gulp.dest('app/scss/helpers/'));
 });
 
 // Fonts
@@ -79,7 +110,7 @@ gulp.task('fonts', function() {
 
 // Bower
 gulp.task('bower', function () {
-  gulp.src('app/_head.jade')
+  gulp.src('app/_head.pug')
     .pipe(wiredep({
       directory : "app/bower_components"
     }))
@@ -88,55 +119,50 @@ gulp.task('bower', function () {
 });
 
 
-// Compile HTML from Jade 2
-gulp.task('jade', function() {
-    var YOUR_LOCALS = {};
-    return gulp.src('app/**/*.jade')
-        .pipe(plumber(plumberErrorHandler))
-        //only pass unchanged *main* files and *all* the partials
-        .pipe(changed('app', {extension: '.html'}))
+// PUG
+gulp.task('pug', function() {
+    return gulp.src('app/**/*.pug')
 
-        //filter out unchanged partials, but it only works when watching
-        .pipe(gulpif(global.isWatching, cached('jade')))
+    //only pass unchanged *main* files and *all* the partials 
+    .pipe(changed('app', { extension: '.html' }))
 
-        //find files that depend on the files that have changed('app
-        .pipe(jadeInheritance({basedir: 'app'}))
+    //filter out unchanged partials, but it only works when watching 
+    .pipe(gulpif(global.isWatching, cached('pug')))
 
-        //filter out partials (folders and files starting with "_" )
-        .pipe(filter(function (file) {
-            return !/\/_/.test(file.path) && !/^_/.test(file.relative);
-        }))
+    //find files that depend on the files that have changed 
+    .pipe(pugInheritance({ basedir: 'app', skip: 'node_modules' }))
 
-        //process jade templates
-        .pipe(jade({
-            locals: YOUR_LOCALS,
-            pretty: true
-        }))
-
-        //save all the files
-        .pipe(gulp.dest('app'))
-        .pipe(notify({ message: 'Your Jade file has been molded into HTML.' }));
+    //filter out partials (folders and files starting with "_" ) 
+    .pipe(filter(function(file) {
+      return !/\/_/.test(file.path) && !/^_/.test(file.relative);
+    }))
+    .pipe(plumber())
+    .pipe(pug({
+        pretty: true
+    }))
+    .on("error", notify.onError(function(error) {
+      return "Message to the notifier: " + error.message;
+    }))
+    .pipe(gulp.dest('app'));
 });
 gulp.task('setWatch', function() {
     global.isWatching = true;
 });
 
-// Compass
-gulp.task('compass', function() {
+
+// style
+gulp.task('style', function() {
   gulp.src('app/scss/**/*.scss')
     .pipe(plumber(plumberErrorHandler))
-    .pipe(compass({
-        css: 'app/css',
-        sass: 'app/scss',
-        img: 'app/img'
-    }))
+    .pipe(sassGlob())
+    .pipe(sass())
     .pipe(reload({stream:true}))
     .pipe(autoprefixer({
         browsers: ['last 2 versions'],
         cascade: false
     }))
     .pipe(gulp.dest('app/css'))
-    .pipe(notify({ message: 'Compass task complete' }));
+    .pipe(notify({ message: 'Style task complete' }));
 });
 
 
@@ -153,14 +179,12 @@ var plumberErrorHandler = { errorHandler: notify.onError({
     })
 };
 
-gulp.task('watch', ['browser-sync', 'compass', 'setWatch', 'jade', 'bower'], function() {
-    gulp.watch('app/scss/**/*.scss', ['compass'])
+gulp.task('watch', ['browser-sync', 'sprite', 'style', 'setWatch', 'pug', 'bower'], function() {
+    gulp.watch('app/scss/**/*.scss', ['style'])
     gulp.watch('bower.json', ['bower'])
-    gulp.watch('app/**/*.jade', ['setWatch', 'jade'])
+    gulp.watch('app/**/*.pug', ['setWatch', 'pug'])
 });
 
 
 // Default task to be run with `gulp`
-gulp.task('default', ['watch'], function () {
-
-});
+gulp.task('default', ['watch']);
