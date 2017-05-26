@@ -63,8 +63,9 @@
   left: 50%;
   z-index: 3;
   bottom: 20px;
+  @extend %transition;
   &:hover {
-    transform: scale(1.1);
+    transform: scale(1.2);
   }
   @include breakpoint($screen-sm) {
     bottom: 90px;

@@ -1,5 +1,9 @@
 @charset "UTF-8";
 @import url("https://fonts.googleapis.com/css?family=Merriweather:300,300i,400,400i,700,700i,900,900i|Montserrat:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i|Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i");
+.show-more-w, .clients-list-i, .pricing-plan-i {
+  -webkit-transition: all 0.2s ease;
+  transition: all 0.2s ease; }
+
 /*!
  * Bootstrap v3.3.7 (http://getbootstrap.com)
  * Copyright 2011-2016 Twitter, Inc.
@@ -5873,6 +5877,9 @@ input[type="number"] {
 .btn {
   font-family: Montserrat, sans-serif; }
 
+.btn-lg, .btn-group-lg > .btn {
+  height: 45px; }
+
 .btn_up {
   text-transform: uppercase;
   font-size: 12px;
@@ -6092,8 +6099,8 @@ input[type="number"] {
   z-index: 3;
   bottom: 20px; }
   .show-more-w:hover {
-    -webkit-transform: scale(1.1);
-    transform: scale(1.1); }
+    -webkit-transform: scale(1.2);
+    transform: scale(1.2); }
   @media (min-width: 768px) {
     .show-more-w {
       bottom: 90px; } }
@@ -6286,11 +6293,11 @@ input[type="number"] {
   margin-bottom: 20px;
   border: 1px solid #f0f0f0;
   padding: 20px; }
+  .pricing-plan-i:hover {
+    background-color: #fafafa; }
   @media (min-width: 768px) {
     .pricing-plan-i {
       padding: 50px; } }
-  .pricing-plan-i:hover {
-    background-color: #fafafa; }
 
 .pricing-plan__title {
   color: #333333;

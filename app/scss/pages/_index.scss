@@ -48,6 +48,7 @@
   margin: 5px;
   display: inline-block;
   opacity: .5;
+  @extend %transition;
   &:hover {
     opacity: 1;
   }
@@ -75,7 +76,7 @@
 
 .feature__title {
   color: #333;
-  font-family: Montserrat, sans-serif;
+  font-family: $second-font;
   font-size: 25px;
   font-weight: 400;
   margin-bottom: 30px;
@@ -88,7 +89,7 @@
 .feature__subtitle {
   text-transform: uppercase;
   color: #333;
-  font-family: Montserrat, sans-serif;
+  font-family: $second-font;
   font-size: 14px;
   font-weight: 400;
   text-transform: uppercase;
@@ -129,7 +130,7 @@
 
 .testimonial__autor {
   color: #363636;
-  font-family: Montserrat, sans-serif;
+  font-family: $second-font;
   font-size: 16px;
   font-weight: 400;
 }
@@ -184,7 +185,7 @@
 
 .benefit_title {
   color: #333;
-  font-family: Montserrat, sans-serif;
+  font-family: $second-font;
   font-size: 18px;
   font-weight: 400;
   margin-bottom: 10px;
@@ -216,7 +217,7 @@
 
 .section-title {
   color: #333;
-  font-family: Montserrat, sans-serif;
+  font-family: $second-font;
   font-weight: 400;
   font-size: 20px;
   @include breakpoint($screen-sm) {
@@ -239,20 +240,21 @@
   margin-bottom: 20px;
   border: 1px solid #f0f0f0;
   padding: 20px;
-  @include breakpoint($screen-sm) {
-    padding: 50px;
-  }
+  @extend %transition;
   &:hover {
     background-color: #fafafa;
     .btn {
       @extend .btn_primary-gr;
     }
   }
+  @include breakpoint($screen-sm) {
+    padding: 50px;
+  }
 }
 
 .pricing-plan__title {
   color: $gray-dark;
-  font-family: Montserrat, sans-serif;
+  font-family: $second-font;
   font-size: 14px;
   font-weight: 400;
   line-height: 28px;
